@@ -1,4 +1,4 @@
-package BinarySearch;
+package binarySearch;
 
 public class FindMinRotated {
     public static void main(String[] args) {

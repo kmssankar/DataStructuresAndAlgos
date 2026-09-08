@@ -27,7 +27,7 @@ public class RandomisedSet {
             int rem = 0 - nums[i];
 
             int startIdx = i + 1;
-            int endIdx = numsLen - 1 
+            int endIdx = numsLen - 1;
             while(startIdx < endIdx){
                 int sum = nums[startIdx] + nums[endIdx];
                 if(sum < rem){
