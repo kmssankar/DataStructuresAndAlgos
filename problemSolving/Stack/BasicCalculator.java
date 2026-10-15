@@ -10,7 +10,7 @@ public class BasicCalculator {
     public static void main(String[] args) {
 
         System.out.println(calculate("(1+(2+3)+(4+5))"));
-        System.out.println(calculate("1-(     -2)"));
+        System.out.println(calculate("5-(     -2)"));
     }
 
     public static int calculate(String s) {
@@ -51,6 +51,7 @@ public class BasicCalculator {
                     break;
 
                 case '(':
+                    System.out.println("Stack at ( " + stack);
                     stack.push(result);
                     stack.push(sign);
                     result = 0;
@@ -58,10 +59,10 @@ public class BasicCalculator {
                     break;
 
                 case ')':
-                    System.out.println("Stack at ) " + stack);
+                    System.out.println("Stack at ) " + stack +" - " + sign);
                     int signToCalc = stack.pop();
                     int resultToCalc = stack.pop();
-                    result += signToCalc * resultToCalc;
+                    result = result * signToCalc + resultToCalc;
                     sign = 1;
                     break;
 
@@ -70,8 +71,6 @@ public class BasicCalculator {
                     break;
 
                 case '+':
-
-                    sign =  sign;
                     break;
 
                 default:
@@ -80,6 +79,7 @@ public class BasicCalculator {
             }
 
         }
+
         return result;
     }
 }
